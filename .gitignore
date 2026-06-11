@@ -43,6 +43,9 @@ node_modules/
 *.wav
 *.m4a
 
+# Obsidian plugin cache (rigenerabile)
+.obsidian/plugins/text-extractor/cache/
+
 # Editor
 .vscode/
 
