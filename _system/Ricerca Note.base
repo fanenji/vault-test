@@ -1,0 +1,75 @@
+views:
+  - type: table
+    name: Tutte le note
+    filters:
+      and:
+        - topic == "data-platform"
+    order:
+      - file.name
+      - topic
+      - tags
+      - type
+      - created
+  - type: table
+    name: GIS
+    order:
+      - file.name
+      - tags
+      - type
+      - created
+  - type: table
+    name: Data Platform
+    filters:
+      and:
+        - topic == "data-platform"
+    order:
+      - file.name
+      - tags
+      - type
+      - created
+  - type: table
+    name: Opendata
+    filters:
+      and:
+        - topic == "opendata"
+    order:
+      - file.name
+      - tags
+      - topic
+      - type
+      - created
+  - type: table
+    name: AI
+    filters:
+      or:
+        - topic == "ai"
+        - topic == "claude-code"
+    order:
+      - file.name
+      - topic
+      - tags
+      - type
+      - created
+  - type: table
+    name: Obsidian
+    filters:
+      and:
+        - topic == "obsidian"
+    order:
+      - file.name
+      - tags
+      - type
+      - created
+  - type: table
+    name: Homelab / Mac
+    filters:
+      or:
+        - topic == "homelab"
+        - topic == "mac"
+        - topic == "hardware"
+    order:
+      - file.name
+      - topic
+      - tags
+      - type
+      - created

@@ -1,0 +1,76 @@
+# Schema
+
+Regole strutturali della wiki. Le skill (ingest, lint) leggono questo file per decidere come classificare e validare le pagine.
+
+## Tipi di pagina
+
+Ogni pagina markdown in `wiki/` deve avere frontmatter YAML con il campo `type`:
+
+| Type | Cartella | Cosa contiene |
+|---|---|---|
+| `entity` | `wiki/entities/` | Persone, organizzazioni, prodotti, luoghi — soggetti referenziabili |
+| `concept` | `wiki/concepts/` | Teorie, metodi, tecniche, framework — oggetti astratti |
+| `source` | `wiki/sources/` | Riassunto di un documento in `raw/sources/` |
+| `query` | `wiki/queries/` | Risposta salvata da chat o deep-research |
+| `synthesis` | `wiki/synthesis/` | Analisi trasversale fra più fonti / pagine |
+
+## Frontmatter richiesto
+
+Tutte le pagine:
+
+```yaml
+---
+type: entity | concept | source | query | synthesis
+title: "Titolo umano"
+created: YYYY-MM-DD
+updated: YYYY-MM-DD     # opzionale ma raccomandato
+tags: []                # opzionale
+---
+```
+
+Per `source`:
+
+```yaml
+source_path: raw/sources/...       # path relativo
+source_sha256: <hash>              # cache invalidation
+```
+
+Per `query`:
+
+```yaml
+origin: chat | deep-research
+query: "domanda originale"
+```
+
+## Naming convention
+
+- File: kebab-case, lowercase. Es. `anthropic.md`, `transformer-architecture.md`.
+- Pagine sono **uniche per slug** — `entities/anthropic.md` e `concepts/anthropic.md` confliggono.
+- Wikilink risolti case-insensitive: `[[Anthropic]]` matcha `anthropic.md`.
+
+## Workflow contraddizioni
+
+Quando l'ingest produce un'affermazione che contraddice una pagina esistente:
+
+1. La skill **non sovrascrive** automaticamente.
+2. Aggiunge l'affermazione contraddittoria alla coda di review in `.llm-wiki/review/`.
+3. L'utente riceve un report al termine dell'ingest e decide cosa tenere.
+
+## File auto-gestiti
+
+Non modificare a mano (sono rigenerati dalle skill):
+
+- `wiki/index.md` — catalogo automatico
+- `wiki/log.md` — storico operazioni
+- `wiki/overview.md` — sintesi globale aggiornata da ingest
+
+## Personalizzazione
+
+Puoi:
+- Aggiungere nuovi tipi pagina (definisci qui type + cartella).
+- Aggiungere campi frontmatter custom (le skill li preservano).
+- Modificare le regole di naming (le skill leggono questo file ad ogni run).
+
+Non puoi (senza modificare le skill):
+- Cambiare la cartella `raw/sources/` (hardcoded nelle skill).
+- Cambiare il prefix `wiki/` (hardcoded nei controlli di sicurezza path).

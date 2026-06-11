@@ -1,0 +1,50 @@
+{
+  "entries": {
+    "anthropic-claude.md": {
+      "hash": "d56b455bbb7583307e7ff7b9d6b22d0be07ac91cf61aa78d1ee1624bd28a5a10",
+      "timestamp": 1780237880.237246,
+      "files_written": [
+        "wiki/sources/anthropic-claude.md",
+        "wiki/entities/anthropic.md",
+        "wiki/entities/claude.md",
+        "wiki/concepts/constitutional-ai.md",
+        "wiki/concepts/ai-alignment.md",
+        "wiki/concepts/ai-interpretability.md",
+        "wiki/index.md",
+        "wiki/overview.md",
+        "wiki/log.md"
+      ]
+    },
+    "retrieval-augmented-generation.md": {
+      "hash": "61058e30f3ee4dc3e3feabe277d0434562c1efd7b6b64b2c9c0b27b70ffa87b8",
+      "timestamp": 1780238326.707623,
+      "files_written": [
+        "wiki/sources/retrieval-augmented-generation.md",
+        "wiki/concepts/retrieval-augmented-generation.md",
+        "wiki/concepts/embedding-model.md",
+        "wiki/concepts/vector-database.md",
+        "wiki/concepts/hybrid-search.md",
+        "wiki/concepts/reranker.md",
+        "wiki/index.md",
+        "wiki/log.md",
+        "wiki/overview.md"
+      ]
+    },
+    "research-metodi-alternativi-a-retrieval-augmented-generatio-2026-06-01.md": {
+      "hash": "2590e36bab776f282f2d41531e0deb75bce440800e0db5685ea2d3c716c951b6",
+      "timestamp": 1780336029.818194,
+      "files_written": [
+        "wiki/sources/research-metodi-alternativi-a-retrieval-augmented-generatio-2026-06-01.md",
+        "wiki/concepts/fine-tuning.md",
+        "wiki/concepts/continued-pretraining.md",
+        "wiki/concepts/graphrag.md",
+        "wiki/concepts/raft.md",
+        "wiki/concepts/long-context-grounding.md",
+        "wiki/concepts/in-context-ralm.md",
+        "wiki/index.md",
+        "wiki/overview.md",
+        "wiki/log.md"
+      ]
+    }
+  }
+}

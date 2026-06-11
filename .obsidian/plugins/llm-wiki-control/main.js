@@ -1,0 +1,1 @@
+/Users/S.Parodi/Vaults/vault-template/.obsidian/plugins/llm-wiki-control/main.js

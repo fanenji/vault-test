@@ -1,0 +1,58 @@
+# State interno (rigenerabile)
+.llm-wiki/queue/
+.llm-wiki/ingest-cache/
+.llm-wiki/chats/
+.llm-wiki/review/
+.llm-wiki/qmd-index.sqlite
+.llm-wiki/qmd-index.sqlite-*
+.llm-wiki/*.log
+
+# Secrets locali
+.llm-wiki/secrets.json
+.env
+.env.local
+
+# OpenCode
+.opencode/node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Node (se installi qmd in locale anziché globale)
+node_modules/
+
+# Video / audio
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.m4a
+
+# Editor
+.vscode/
+
+# SSH keys and certificates
+*.ppk
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+id_ecdsa
+
